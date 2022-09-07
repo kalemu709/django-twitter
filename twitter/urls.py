@@ -17,10 +17,12 @@ from django.urls import include, path
 from django.contrib import admin
 from accounts.api.view import ViewSet, AccountViewSet
 from rest_framework import routers
+from tweet.api.view import TweetViewSet
 
 router = routers.DefaultRouter()
 router.register(r'api/users', ViewSet)
 router.register(r'api/accounts', AccountViewSet, basename='accounts')
+router.register(r'api/tweet', TweetViewSet, basename='tweet')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
